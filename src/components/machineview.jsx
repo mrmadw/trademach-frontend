@@ -18,7 +18,7 @@ function MachineView() {
 
     try {
       const response = await axios.get(
-        "http://localhost:8000/api/listings/my",
+        "https://trademach.vercel.app/api/listings/my",
         {
           headers: {
             Authorization: `Bearer ${token}`,
