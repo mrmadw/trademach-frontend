@@ -47,7 +47,7 @@ function Home() {
 
   // Fetch API data
   useEffect(() => {
-    axios.get("http://localhost:8000/api/get_listings")
+    axios.get("https://trademach.vercel.app/api/get_listings")
       .then(res => {
         setProducts(res.data);   // <-- Dynamic data from API
       })
