@@ -8,6 +8,7 @@ import Navbar from "./navbar";
 import axios from "axios";
 import Dashboard from "./dashboard"
 import apiClient from "./assets/api"
+import apiLogin from "./assets/apilogin"
 const schema = z.object({
   email: z.string().min(1, "Email is required").email("Invalid email"),
   password: z.string().min(4, "Password must be at least 8 characters"),
@@ -27,7 +28,7 @@ formState: {errors, isSubmitting},
 
 const onSubmit = async (data) => {
   try {
-    const response = await apiClient.post(
+    const response = await apiLogin.post(
       "/token/obtain/",
       data,
       { withCredentials: true } // important: allows backend to set HttpOnly cookie
