@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const apiClient = axios.create({
-  baseURL: "trademach-backend-production.up.railway.app/api",
+  baseURL: "http://trademach-backend-production.up.railway.app/api",
   withCredentials: true, // Required to send HttpOnly cookies
 });
 
