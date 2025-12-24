@@ -83,14 +83,14 @@ console.log(data)
   try{
 
     const response = await axios.post(
-      "http://localhost:8000/api/signup/",
+      "https://trademach-backend-production.up.railway.app/api/signup/",
       data, payload,
       {
         headers:{"Content-Type": "application/json"}},
       );
 
 
-    console.log("Successfully signed in", response.data);
+    console.log("Sign up Successful", response.data);
 
   
     window.location.href = "/login";

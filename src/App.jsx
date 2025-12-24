@@ -49,7 +49,6 @@ function Home() {
   useEffect(() => {
     axios.get("https://trademach-backend-production.up.railway.app/api/get_listings")
       .then(res => {
-        console.log(res.data);
         setProducts(res.data);   // <-- Dynamic data from API
       })
       .catch(err => console.error(err));
