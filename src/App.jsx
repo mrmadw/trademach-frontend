@@ -47,8 +47,9 @@ function Home() {
 
   // Fetch API data
   useEffect(() => {
-    axios.get("https://trademach.vercel.app/api/get_listings")
+    axios.get("https://trademach-backend-production.up.railway.app/api/get_listings")
       .then(res => {
+        console.log(res.data);
         setProducts(res.data);   // <-- Dynamic data from API
       })
       .catch(err => console.error(err));
