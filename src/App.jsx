@@ -10,7 +10,7 @@ import Api from './apitest'
 import axios from "axios";
 import CreateList from "./pages/create-list"
 import Welcome from "./pages/welcome"
-import Hero from "./components/hero"
+
 
 
 
@@ -20,7 +20,7 @@ import Hero from "./components/hero"
 function App() {
 
 
-  const [sidebarOpen, setSidebarOpen] = useState(false)
+  
 
   return (
        <div>
@@ -43,6 +43,7 @@ function App() {
 }
 
 function Home() {
+ const [sidebarOpen, setSidebarOpen] = useState(false)
  const [products, setProducts] = useState([]);
 
   // Fetch API data
@@ -83,9 +84,10 @@ function Home() {
               <p className="text-gray-600 mt-1">${product.price}</p>
 
               {/* Button */}
-              <button className="mt-3 w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700">
+              <button className="mt-3 w-full bg-black text-white py-2 rounded hover:bg-blue-900">
                 More Information
               </button>
+
             </div>
           ))}
 

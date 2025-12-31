@@ -257,6 +257,11 @@ const onSubmit = async (data) => {
   )}
 
 
+{/* Image */}
+  <label>Add Image</label>
+   <input type="file" id="file-input" name="ImageStyle"/>
+
+
 {/* Category */}
 <select
   {...register("category")}

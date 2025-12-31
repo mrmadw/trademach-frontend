@@ -99,11 +99,11 @@ function MachineView() {
 
 	return(
 		<>
-		<div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+		<div className=" grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
 			{products.map((product, index) => (
             <div
               key={index}
-              className="bg-white p-4 rounded-lg shadow hover:shadow-lg transition"
+              className="  border-2 border-blue-800 rounded-md bg-white p-4 rounded-lg shadow hover:shadow-lg transition"
             >
               {/* Image */}
               <img

@@ -82,39 +82,46 @@ function Dashboard() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             <div
               onClick={() => setListingType("sell")}
-              className={`bg-white p-6 shadow-lg rounded-lg cursor-pointer transition ${
+              className={`  bg-sky-500/96 hover:bg-red-500/90 border-blue-800  p-6 shadow-lg rounded-lg cursor-pointer transition ${
                 listingType === "sell" ? "border-2 border-blue-700" : ""
               }`}
             >
-              <h2 className="text-xl font-bold">Sell</h2>
-              <p className="text-gray-700">List machine for sale</p>
+              <h2 className="text-xl font-bold text-white">Sell</h2>
+              <p className="text-white">List machine for sale</p>
             </div>
+
+
+
+            {/* This feature is for later. 
 
             <div
               onClick={() => setListingType("auction")}
-              className={`bg-white p-6 shadow-lg rounded-lg cursor-pointer transition ${
+              className={` bg-sky-500/96 hover:bg-red-500/90 p-6 shadow-lg rounded-lg cursor-pointer transition ${
                 listingType === "auction" ? "border-2 border-purple-700" : ""
               }`}
             >
-              <h2 className="text-xl font-bold">Auction</h2>
-              <p className="text-gray-700">Sell machine via bidding</p>
+              <h2 className="text-xl font-bold text-white">Auction</h2>
+              <p className="text-gray-700 text-white">Sell machine via bidding</p>
             </div>
+
+            */}
+
 
             <div
               onClick={() => setListingType("hire")}
-              className={`bg-white p-6 shadow-lg rounded-lg cursor-pointer transition ${
+              className={` bg-sky-500/96 hover:bg-red-500/90 p-6 shadow-lg rounded-lg cursor-pointer transition ${
                 listingType === "hire" ? "border-2 border-green-700" : ""
               }`}
             >
-              <h2 className="text-xl font-bold">Hire</h2>
-              <p className="text-gray-700">Put machine up for hire</p>
+              <h2 className="text-xl font-bold text-white">Hire</h2>
+              <p className="text-gray-700 text-white">Put machine up for hire</p>
             </div>
           </div>
 
           {/* Selected Form */}
-          <div className="bg-white p-6 shadow-lg rounded-lg transition-all">
+          <div className="border-black p-6 shadow-lg rounded-lg transition-all">
             {!listingType && (
-              <p className="text-gray-500 text-center">
+              <p className="text-black text-center ">
                 Select a listing type above to continue
               </p>
             )}

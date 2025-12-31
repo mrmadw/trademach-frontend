@@ -7,7 +7,6 @@ import './App.css'
 import trademachlogo from './assets/trademachlogo.png'
 
 
-
 function Navbar() {
     const [sidebarOpen, setSidebarOpen] = useState(false)
     const navigate = useNavigate();
@@ -16,8 +15,12 @@ function Navbar() {
 
     <>  
         {/* Mobile Nav*/}
-    <div className= {`fixed bg-white w-50 h-screen shadow 
-    ${sidebarOpen ? 'block': 'hidden'}`}
+    <div className= {`
+    fixed top-0 left-0 h-screen w-64 bg-white shadow z-50
+    transition-transform duration-300
+    ${sidebarOpen ? 'translate-x-0' : '-translate-x-full'}
+    lg:hidden
+  `}
   >       
         <div className="p-2 flex justify-between border-b">
           <div className="text-xl font-bold">Logo</div>
@@ -26,7 +29,7 @@ function Navbar() {
 
        
         <div className="px-6 py-58 space-y-4">
-          <button className="  bg-blue-800 text-white font-bold border-2 border-blue-700 p-2 w-40 rounded hover:bg-blue-100 transition"
+          <button className="  bg-black text-white font-bold border-2 border-blue-700 p-2 w-40 rounded hover:bg-blue-100 transition"
       onClick={() =>navigate("/login")}>
       Login
     </button>
@@ -48,7 +51,7 @@ function Navbar() {
       <Link className=" hidden sm:block text-blue-800 font-bold" to="/">Home</Link>
       <Link className="hidden sm:block  text-blue-800 font-bold" to="/login">Log in | Register</Link>
       <div className="flex items-center space-x-3">
-        <Link className="px-4 py-1 bg-blue-600 text-white rounded hover:bg-blue-700" to="/dashboard">
+        <Link className="px-2 py-1 bg-black text-white rounded hover:bg-blue-700" to="/dashboard">
           Add Machine/Parts
         </Link>
       </div>
