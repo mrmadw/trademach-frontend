@@ -10,7 +10,7 @@ import Api from './apitest'
 import axios from "axios";
 import CreateList from "./pages/create-list"
 import Welcome from "./pages/welcome"
-
+import Footer from "./components/footer"
 
 
 
@@ -93,6 +93,7 @@ function Home() {
 
         </div>
       </div>
+      <div><Footer/></div>
     </div>
   );
 }

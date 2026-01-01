@@ -82,7 +82,7 @@ function Navbar() {
           </Link>
 
           <Link
-            to="/"
+            to="/login"
             className="text-slate-300 hover:text-white transition"
           >
             Login | Register

@@ -17,6 +17,7 @@ const schema = z.object({
 
 function Login() {
 
+
 const{register, 
 handleSubmit,
 setError,
@@ -110,6 +111,13 @@ const onSubmit = async (data) => {
         errors.root && 
       <div className="text-red-500">{errors.root.message}</div>
     }
+
+<a
+  href="http://localhost:8000/accounts/google/login/"
+  className="flex items-center justify-center w-full px-4 py-2 text-sm font-medium text-gray-600 transition duration-150 ease-in-out border border-gray-300 rounded-lg shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+>
+  Sign in with Google
+</a>
 
 
 
