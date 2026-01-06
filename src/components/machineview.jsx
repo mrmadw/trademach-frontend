@@ -1,6 +1,7 @@
 import React from "react"
 import axios from "axios";
 import { useState, useEffect } from 'react'
+import ApiClient from '../assets/api'
 
 function MachineView() {
 
@@ -17,14 +18,12 @@ function MachineView() {
     }
 
     try {
-      const response = await axios.get(
-        "https://trademach-backend-production.up.railway.app/api/listings/my",
-        {
-          headers: {
-            Authorization: `Bearer ${token}`,
-          },
-        }
-      );
+
+      const response = await ApiClient.get("/listings/my");
+      console.log("API response:", response.data);
+      setProducts(response.data);
+
+      
        console.log("API response:", response.data);
       setProducts(response.data);
     } catch (error) {
@@ -44,14 +43,10 @@ function MachineView() {
   }
 
   try {
-    await axios.delete(
-      `http://localhost:8000/api/listings/${id}/`,
-      {
-        headers: {
-          Authorization: `Bearer ${token}`,
-        },
-      }
-    );
+
+  await ApiClient.delete(`/listings/${id}/`);
+  console.log("Listing deleted:", id);
+    
 
     // Remove deleted item from UI instantly
     setProducts(prev =>

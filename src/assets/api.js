@@ -7,7 +7,26 @@ const apiClient = axios.create({
 
 // Attach access token to every request
 apiClient.interceptors.request.use((config) => {
+
+  {/*For Debugging.
+   Make sure to remove this code when pushing to Production!
+   ==========================================================*/}
+  console.log("REQUEST:", {
+    url: config.url,
+    method: config.method
+  });
+  {/*==========================================================*/}
+
+
+
   const access = localStorage.getItem("access_token");
+
+  {/*For Debugging.
+   Make sure to remove this code when pushing to Production!
+   ==========================================================*/}
+    console.log("🔑 Access token from storage:", access);
+  {/*==========================================================*/}
+
   if (access) {
     config.headers.Authorization = `Bearer ${access}`;
   }
@@ -31,7 +50,7 @@ apiClient.interceptors.response.use(
       try {
         // Send refresh request; backend reads refresh token from HttpOnly cookie
         const res = await axios.post(
-          "http://localhost:8000/api/token/refresh/",
+          "https://trademach-backend-production.up.railway.app/api/token/refresh/",
           {},
           { withCredentials: true } // cookies included
         );
