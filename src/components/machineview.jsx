@@ -20,7 +20,6 @@ function MachineView() {
     try {
 
       const response = await ApiClient.get("/listings/my");
-      console.log("API response:", response.data);
       setProducts(response.data);
 
       
@@ -45,7 +44,7 @@ function MachineView() {
   try {
 
   await ApiClient.delete(`/listings/${id}/`);
-  console.log("Listing deleted:", id);
+
     
 
     // Remove deleted item from UI instantly
@@ -72,8 +71,8 @@ function MachineView() {
   const token = localStorage.getItem("access_token");
 
   try {
-    await axios.delete(
-      `http://localhost:8000/api/listings/${id}/`,
+    await ApiClient.delete(
+      `/listings/${id}/`,
       {
         headers: {
           Authorization: `Bearer ${token}`,
